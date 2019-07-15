@@ -1,0 +1,103 @@
+{
+	"info": {
+		"_postman_id": "ffd81d71-4de7-4b6b-9deb-91062e0b8bb2",
+		"name": "Pokemon Api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Add Pokemon",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"id\": 25,\n    \"name\": \"pikachu\",\n    \"sprites\": {\n        \"front_default\": \"https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/25.png\"\n    }\n}"
+				},
+				"url": {
+					"raw": "{{host}}/api/",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"api",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Pokemons",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/api",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"api"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Pokemon by name",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/api/pikachu",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"api",
+						"pikachu"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "d6ca219a-7d62-4551-9778-23eff593fb28",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "2e2ab245-b09e-4e51-aaae-291c4e84ac73",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"id": "03d08802-668d-4949-8a90-423aafe800a9",
+			"key": "host",
+			"value": "",
+			"type": "string"
+		}
+	]
+}
