@@ -2,7 +2,7 @@ import React from 'react';
 import Card from 'react-bootstrap/Card';
 import CardGroup from 'react-bootstrap/CardGroup';
 import './items.css';
-import { camelize } from '../../utils/utils';
+import startCase from 'lodash/startCase';
 
 
 export default function Items(props) {
@@ -14,7 +14,7 @@ export default function Items(props) {
         <Card bg="light" text="dark" className="item-card text-center" border="light" key={item.id}>         
           <Card.Img variant="top" src={item.sprites.front_default} />
           <Card.Body>
-            <Card.Title>{item.id}-{camelize(item.name)}</Card.Title>
+            <Card.Title>{item.id}-{startCase(item.name)}</Card.Title>
           </Card.Body>
         </Card>
       ))}
