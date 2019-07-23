@@ -51,8 +51,7 @@ class App extends React.Component {
   }
 
   existPokemon(name) {
-    const pokemon = this.state.items.find(element => element.name.toLowerCase() === name.toLowerCase());
-    return pokemon ? true : false;
+    return this.state.items.some(element => element.name.toLowerCase() === name.toLowerCase());    
   }
 
   searchPokemon(name) {
