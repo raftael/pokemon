@@ -12,6 +12,7 @@ import Items from './components/Items/Items'
 
 import { URL_API } from './utils/Constants'
 
+
 class App extends React.Component {
   constructor(props) {
     super(props);
@@ -23,6 +24,30 @@ class App extends React.Component {
     };
 
     this.searchPokemon = this.searchPokemon.bind(this);
+  }
+
+  componentDidMount(){    
+    fetch(URL_API)
+    .then(res => res.json())
+    .then(
+      (result) => {
+        this.setState(state => {            
+          const items = result;
+          return {
+            searching: false,
+            error: result.error,
+            errorMessage: result.message || '',              
+            items
+          }
+        });
+      },
+      (error) => {
+        this.setState({
+          message: error,
+          error: true
+        });
+      }
+    );
   }
 
   existPokemon(name) {
